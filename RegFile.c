@@ -1,9 +1,8 @@
 
-
 //Register File
 typedef uint32_t RegFile[RegMemSize];
 
-void RegFile_RW(RegFile currRegFile, char* Rs, char* Rt, char* Rd, WrtData, WrtEnb, &SData, &TData) {
+void RegFile_RW(RegFile currRegFile, uint32_t Rs, uint32_t Rt, uint32_t Rd, WrtData, WrtEnb, &SData, &TData) {
 	
 }
 
@@ -26,4 +25,5 @@ uint32_t binToDecimal (char *bin) {
 	} 
 
 	return decSum;
+
 }

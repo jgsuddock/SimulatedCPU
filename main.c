@@ -21,7 +21,7 @@ Last Updated: October 21, 2015 @ 14:00
 #include "RegFile.h"
 //#include "Cache.h"
 //#include "MainMemory.h"
-// #include "ALU.h"
+//#include "ALU.h"
 
 
 int main(int argc, char const *argv[])
