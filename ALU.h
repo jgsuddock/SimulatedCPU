@@ -10,6 +10,7 @@
 
 public:
     void ALU(int funct, uint32_t *SData, uint32_t *TData, uint32_t *DData);
+    bool getZero();
     
 private:
     bool ALU_Zero;
