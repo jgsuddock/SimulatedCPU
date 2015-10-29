@@ -14,6 +14,8 @@ void MemoryRead(uint32_t* addr, uint32_t* RdData) {
   
 }
 
+// Method to write into the memory.
+// It will write the value of WrtData in Main Memory.
 void MemoryWrite(uint32_t* addr, uint32_t* WrtData) {
   
   int i;
