@@ -4,6 +4,7 @@
 // after the selected operation was done.
 void ALU(int funct, uint32_t *SData, uint32_t *TData, uint32_t *DData) {
   
+  ALU_Zero = false; // Reset the state of ALU_Zero.
   uint32_t result; // Variable to hold the result of the operation.
   
   // Switch statement to determine which action to take based on the value
@@ -14,6 +15,9 @@ void ALU(int funct, uint32_t *SData, uint32_t *TData, uint32_t *DData) {
     break;
   case 1: // Subtraction
     result = *SData - *TData;
+    if(result == 0) {
+      ALU_Zero = true; // Update ALU_Zero.
+    }
     break;
   case 2: // Bitwise AND 
     result = *SData & *TData;
