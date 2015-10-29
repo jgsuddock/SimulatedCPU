@@ -31,3 +31,8 @@ void ALU(int funct, uint32_t *SData, uint32_t *TData, uint32_t *DData) {
   }
   *DData = result;  // Update the value of DData.
 }
+
+// Method to get the current value of ALU_Zero.
+bool getZero() {
+  return ALU_Zero;
+}
