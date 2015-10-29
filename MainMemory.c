@@ -1,11 +1,29 @@
-void MainMemory() {
-
-}
-
+// Method to read into the memory.
+// It will update the value of RdData.
 void MemoryRead(uint32_t* addr, uint32_t* RdData) {
-  *RdData = *addr;
+  
+  int i;
+  
+  // Loop to find the element in Main Memory that has the address.
+  for(i = 0; i < 1024; i++) {
+    if(Mem[i].addr == addr) {
+      // Update the value of RdData with the value in Main Memory.
+      *RdData = Mem[i].data; 
+    }
+  }
+  
 }
 
 void MemoryWrite(uint32_t* addr, uint32_t* WrtData) {
-  *addr = *WrtData;
+  
+  int i;
+  
+  // Loop to find the element in Main Memory that has the address.
+  for(i = 0; i < 1024; i++) {
+    if(Mem[i].addr == addr) {
+      // Write the value of WrtData into Main Memory.
+      Mem[i].data = *WrtData;
+    }
+  }
+  
 }
