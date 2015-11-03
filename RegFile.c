@@ -21,7 +21,7 @@ uint32_t readData(uint32_t addr) {
 	if(addr > RegMemSize){
 		std::cout << "Error: Read addressing out of bounds!";
 	} else {
-		return RegMem[addr1];
+		return RF->RegMem[addr1];
 	}
 }
 
@@ -29,6 +29,6 @@ void writeData(uint32_t addr, uint32_t data) {
 	if(addr > RegMemSize){
 		std::cout << "Error: Read addressing out of bounds!";
 	} else {
-		RegMem[addr] = data;
+		RF->RegMem[addr] = data;
 	}
 }
