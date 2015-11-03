@@ -6,14 +6,14 @@
 
 #include "RegFile.h"
 
-RegFile() {
+RegFile::RegFile() {
 	int i;
 	for(i = 0; i < RegMemSize; i++) {
 		RegMemSize[i] = 0;
 	}
 }
 
-uint32_t readData(uint32_t addr) {
+uint32_t RegFile::readData(uint32_t addr) {
 	if(addr > RegMemSize){
 		std::cout << "Error: Read addressing out of bounds!";
 	} else {
@@ -21,7 +21,7 @@ uint32_t readData(uint32_t addr) {
 	}
 }
 
-void writeData(uint32_t addr, uint32_t data) {
+void RegFile::writeData(uint32_t addr, uint32_t data) {
 	if(addr > RegMemSize){
 		std::cout << "Error: Read addressing out of bounds!";
 	} else {
