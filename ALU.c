@@ -7,6 +7,10 @@
 
 #include "ALU.h"
 
+struct ALU {
+    bool ALU_Zero;
+};
+
 ALU_T ALU_new(void) {
   ALU_T A = malloc(sizeof(ALU));
   A->ALU_Zero = false;
