@@ -22,7 +22,7 @@ Last Updated: October 21, 2015 @ 14:00
 
 #include "Processor.h"
 
-//#include "RegFile.h"
+#include "RegFile.h"
 //#include "Cache.h"
 //#include "MainMemory.h"
 //#include "ALU.h"
