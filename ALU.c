@@ -1,3 +1,10 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdarg.h>
+
+#include "ALU.h"
+
 ALU() {
   ALU_Zero = false;
 }

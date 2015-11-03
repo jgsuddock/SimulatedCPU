@@ -1,4 +1,11 @@
 
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdarg.h>
+
+#include "RegFile.h"
+
 RegFile() {
 	int i;
 	for(i = 0; i < RegMemSize; i++) {

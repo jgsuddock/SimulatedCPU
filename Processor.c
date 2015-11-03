@@ -1,4 +1,14 @@
 
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdarg.h>
+
+#include "Processor.h"
+#include "RegFile.h"
+#include "ALU.h"
+#include "Control.h"
+
 Processor() {
   PC = 0;
   int i;

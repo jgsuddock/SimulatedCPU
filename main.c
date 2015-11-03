@@ -14,22 +14,55 @@ Last Updated: October 21, 2015 @ 14:00
 
 */
 
-#include "stdbool.h"
-#include "stdint.h"
-#include "stdarg.h"
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdarg.h>
 
-#include "RegFile.h"
+#include "Processor.h"
+
+//#include "RegFile.h"
 //#include "Cache.h"
 //#include "MainMemory.h"
 //#include "ALU.h"
 
+uint32_t hexToDec (char* hex);
 
 int main(int argc, char const *argv[])
 {
-	int i;
-	// Initialize the register array.
-	for(i = 0; i < 32; i++) {
-		RegMem[i] = 0;
+
+	Processor proc = new Processor();
+
+	FILE * iFile;
+	int rv;
+	int i = 0;
+
+	iFile = fopen("Instructions.txt", "r");
+
+	uint32_t hex = 0;
+	uint32_t instructions [1000];
+
+	if (iFile == NULL) 
+		perror ("Error opening file");
+	else {
+
+		rv = fscanf(iFile, "%x", &hex);
+
+		while (rv != EOF) {
+
+			printf("%d\n",hex);
+
+			instructions[i] = hex;
+
+			rv = fscanf(iFile, "%x", &hex);
+
+			i++;
+		}
+	
+		fclose(iFile);
 	}
+
+	proc.execProcessor(instructions[0]);
+
 	return 0;
 }

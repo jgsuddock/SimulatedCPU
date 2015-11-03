@@ -1,11 +1,11 @@
 #ifndef PROCESSOR_H
 #define PROCESSOR_H
 
+#include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdarg.h>
 
-#include "Processor.c"
 #include "RegFile.h"
 #include "ALU.h"
 #include "Control.h"

@@ -7,7 +7,10 @@ uint32_t wrongBinToDec (uint32_t bin);
 int main(int argc, char const *argv[]) {
 	
 	uint32_t bob = 0b11010001000011011101000100001101;
-	
+	uint32_t me = bob << 6;
+	uint32_t you = me >> 27;
+
+	printf("You: %d\n",you);
 
 	// uint32_t bob = 0b00100;
 	uint32_t test = 0b01000;

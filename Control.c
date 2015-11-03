@@ -1,3 +1,11 @@
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdarg.h>
+
+#include "Control.h"
+
 void ControlInfo(uint32_t contArr[], uint32_t funct) {
   
   // Switch statement to determine which action to take based on the value
