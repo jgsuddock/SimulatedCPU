@@ -10,6 +10,22 @@
 #include "ALU.h"
 #include "Control.h"
 
+struct Processor {
+        uint32_t PC;
+        // RegDst
+        // Jump
+        // Branch
+        // MemRead
+        // MemToReg
+        // ALUop
+        // MemWrite
+        // ALUSrc
+        // RegWrite
+        uint32_t conArr[9];
+        struct RegFile_T *RF;
+        struct ALU_T *A;
+}; 
+
 Processor_T Processor_new(void) {
 	Processor_T P = malloc(sizeof(Processor));
   	P->PC = 0;
@@ -46,7 +62,7 @@ void executeRType(uint32_t instr) {
 	uint32_t data2 = readData(rt);
 	
 	ControlInfo(conArr,funct);
-	uint32_t result = ALU(conArr[5],data1,data2);
+	uint32_t result = ALU(P->conArr[5],data1,data2);
 	if(P->conArr[8] == 1) {
 		writeData(rd,result);
 	}
