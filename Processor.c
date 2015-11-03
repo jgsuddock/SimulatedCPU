@@ -8,7 +8,7 @@ Processor() {
 }
 
 void execProcessor(uint32_t instr) {
-	PC = PC + 4;
+	PC = PC + 1;
 	uint32_t type = instr >> 26;
 	switch(type) {
   	case 0: // R type
@@ -44,4 +44,8 @@ void executeIType(uint32_t instr) {
 void executeJType(uint32_t instr) {
 	
 
+}
+
+uint32_t getPC() {
+	return PC;
 }
