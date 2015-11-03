@@ -7,8 +7,8 @@
  * Description: This project simulates the components of a MIPS
  *        CPU and how they interact.
  * 
- * Created by: Jake Suddock
- *      Jeanette Rusli
+ * Created by:  Jake Suddock
+ *              Jeanette Rusli
  * 
  * Last Updated: November 3, 2015 @ 2:00
  * 
@@ -25,16 +25,16 @@
 static bool ALU_Zero = false;
 
 // Method for ALU operations.
-// The input includes funct to determine the ALU action, value of SData,
-// value of TData, and value of DData. The value of DData will be updated
-// after the selected operation was done.
+// The input includes ALUop to determine the ALU action, value of SData, and
+// value of TData. 
+// The result of the ALU operation will then be returned.
 uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData) {
   
   ALU_Zero = false; // Reset the state of ALU_Zero.
   uint32_t result; // Variable to hold the result of the operation.
   
   // Switch statement to determine which action to take based on the value
-  // of funct.
+  // of ALUop.
   switch(ALUop) {
   case 0: // Bitwise AND
     result = SData & TData;
@@ -55,7 +55,7 @@ uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData) {
     printf("Invalid operation.\n" );
     break;
   }
-  return result;  // Update the value of DData.
+  return result;  // Return the result of ALU operation.
 }
 
 // Method to get the current value of ALU_Zero.
