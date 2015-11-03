@@ -11,21 +11,7 @@
 #include "ALU.h"
 #include "Control.h"
 
-typedef struct Processor {
-        uint32_t PC;
-        // RegDst
-        // Jump
-        // Branch
-        // MemRead
-        // MemToReg
-        // ALUop
-        // MemWrite
-        // ALUSrc
-        // RegWrite
-        uint32_t conArr[9];
-        struct RegFile_T *RF;
-        struct ALU_T *A;
-} *Processor_T;
+typedef struct Processor *Processor_T;
 
 extern Processor_T Processor_new(void);
 extern void execProcessor(uint32_t instr);
