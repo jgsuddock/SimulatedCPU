@@ -1,3 +1,7 @@
+ALU() {
+  ALU_Zero = false;
+}
+
 // Method for ALU operations.
 // The input includes funct to determine the ALU action, value of SData,
 // value of TData, and value of DData. The value of DData will be updated
