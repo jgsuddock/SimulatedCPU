@@ -13,7 +13,7 @@
 
 public:
 	RegFile();
-	uint32_t rweadData(uint32_t addr);
+	uint32_t readData(uint32_t addr);
 	void writeData(uint32_t addr, uint32_t data);
 
 private:
