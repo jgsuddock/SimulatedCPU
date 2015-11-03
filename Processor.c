@@ -9,16 +9,20 @@
 #include "ALU.h"
 #include "Control.h"
 
-Processor() {
-  PC = 0;
-  int i;
+Processor Processor_new() {
+	Processor P = malloc(sizeof(Processor));
+  	P->PC = 0;
+  	P->RF = RegFile_new();
+  	P->A = ALU_new();
+  	int i;
 	for(i = 0; i < 9; i++) {
-		conArr[i] = 0;
+		P->conArr[i] = 0;
 	}
+	return P;
 }
 
 void execProcessor(uint32_t instr) {
-	PC = PC + 1;
+	P->PC = P->PC + 1;
 	uint32_t type = instr >> 26;
 	switch(type) {
   	case 0: // R type
@@ -37,13 +41,13 @@ void executeRType(uint32_t instr) {
 	uint32_t shamt = (instr << 21) >> 27;
 	uint32_t funct = (instr << 26) >> 26;
 	
-	uint32_t data1 = RF.readData(rs);
-	uint32_t data2 = RF.readData(rt);
+	uint32_t data1 = readData(rs);
+	uint32_t data2 = readData(rt);
 	
 	ControlInfo(conArr,funct);
-	uint32_t result = A.ALU(conArr[5],data1,data2);
-	if(conArr[8] == 1) {
-		RF.writeData(rd,result);
+	uint32_t result = ALU(conArr[5],data1,data2);
+	if(P->conArr[8] == 1) {
+		writeData(rd,result);
 	}
 }
 
@@ -57,5 +61,5 @@ void executeJType(uint32_t instr) {
 }
 
 uint32_t getPC() {
-	return PC;
+	return P->PC;
 }
