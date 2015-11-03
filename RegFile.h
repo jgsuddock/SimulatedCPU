@@ -9,15 +9,13 @@
 
 //Defines the Register Size
 #define uint32_t RegMemSize 32;
-
-class RegFile {
-	public:
-		RegFile();
-		uint32_t readData(uint32_t addr);
-		void writeData(uint32_t addr, uint32_t data);
 	
-	private:
-		uint32_t RegFileArr; //[RegMemSize]
+struct RegFile {
+	uint32_t RegFileArr[RegMemSize];
 };
+
+extern RegFile();
+extern uint32_t readData(uint32_t addr);
+extern void writeData(uint32_t addr, uint32_t data);
 
 #endif
