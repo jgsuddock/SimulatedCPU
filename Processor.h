@@ -26,7 +26,7 @@ struct Processor {
         struct ALU *A;
 };
 
-extern Processor_new();
+extern Processor Processor_new();
 extern void execProcessor(uint32_t instr);
 extern void executeRType(uint32_t instr);
 extern void executeIType(uint32_t instr);
