@@ -8,6 +8,7 @@
 #include "ALU.c"
 
 public:
+    ALU();
     uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData);
     bool getZero();
     
