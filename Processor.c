@@ -9,8 +9,8 @@
 #include "ALU.h"
 #include "Control.h"
 
-Processor Processor_new() {
-	Processor P = malloc(sizeof(Processor));
+Processor_T Processor_new() {
+	Processor_T P = malloc(sizeof(Processor));
   	P->PC = 0;
   	P->RF = RegFile_new();
   	P->A = ALU_new();
