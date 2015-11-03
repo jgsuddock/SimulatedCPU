@@ -10,25 +10,27 @@
 #include "ALU.h"
 #include "Control.h"
 
-public:
-    Processor();
-    void execProcessor(uint32_t instr);
-    void executeRType(uint32_t instr);
-    void executeIType(uint32_t instr);
-    void executeJType(uint32_t instr);
-    uint32_t getPC();
-    
-private:
-    uint32_t PC;
-    // RegDst
-    // Jump
-    // Branch
-    // MemRead
-    // MemToReg
-    // ALUop
-    // MemWrite
-    // ALUSrc
-    // RegWrite
-    uint32_t conArr[9];
+class Processor {
+    public:
+        Processor();
+        void execProcessor(uint32_t instr);
+        void executeRType(uint32_t instr);
+        void executeIType(uint32_t instr);
+        void executeJType(uint32_t instr);
+        uint32_t getPC();
+        
+    private:
+        uint32_t PC;
+        // RegDst
+        // Jump
+        // Branch
+        // MemRead
+        // MemToReg
+        // ALUop
+        // MemWrite
+        // ALUSrc
+        // RegWrite
+        uint32_t conArr[9];
+};
 
 #endif
