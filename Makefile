@@ -5,4 +5,4 @@ main.o:	main.c Processor.o
 Processor.o:	Processor.c Processor.h RegFile.h RegFile.c ALU.h ALU.c Control.h Control.c
 		gcc -c -g Processor.c
 clean:
-	rm -f *- *.o Lab4
+	rm -f *- *.o main
