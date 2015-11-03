@@ -16,7 +16,6 @@ public:
     void executeRType(uint32_t instr);
     void executeIType(uint32_t instr);
     void executeJType(uint32_t instr);
-    void updateControl(uint32_t funct);
     
 private:
     uint32_t PC;
