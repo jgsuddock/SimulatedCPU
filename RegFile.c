@@ -7,7 +7,7 @@
 #include "RegFile.h"
 
 RegFile_T RegFile_new() {
-	RegFile RF = malloc(sizeof(RegFile));
+	RegFile_T RF = malloc(sizeof(RegFile));
 	
 	int i;
 	for(i = 0; i < 32; i++) {
