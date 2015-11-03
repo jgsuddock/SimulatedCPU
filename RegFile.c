@@ -7,7 +7,7 @@
 #include "RegFile.h"
 
 struct RegFile {
-	uint32_t RegFileArr[32];
+	uint32_t RegMem[32];
 }; 
 
 RegFile_T RegFile_new(void) {
@@ -23,7 +23,7 @@ RegFile_T RegFile_new(void) {
 
 uint32_t readData(RegFile_T RF, uint32_t addr) {
 	if(addr > 32){
-		std::cout << "Error: Read addressing out of bounds!";
+		printf("Error: Read addressing out of bounds!\n" );
 	} else {
 		return RF->RegMem[addr];
 	}
@@ -31,7 +31,7 @@ uint32_t readData(RegFile_T RF, uint32_t addr) {
 
 void writeData(RegFile_T RF, uint32_t addr, uint32_t data) {
 	if(addr > 32){
-		std::cout << "Error: Read addressing out of bounds!";
+		printf("Error: Read addressing out of bounds!\n" );
 	} else {
 		RF->RegMem[addr] = data;
 	}
