@@ -37,13 +37,13 @@ void Processor::executeRType(uint32_t instr) {
 	uint32_t shamt = (instr << 21) >> 27;
 	uint32_t funct = (instr << 26) >> 26;
 	
-	uint32_t data1 = readData(rs);
-	uint32_t data2 = readData(rt);
+	uint32_t data1 = RF.readData(rs);
+	uint32_t data2 = RF.readData(rt);
 	
 	ControlInfo(conArr,funct);
-	uint32_t result = ALU(conArr[5],data1,data2);
+	uint32_t result = A.ALU(conArr[5],data1,data2);
 	if(conArr[8] == 1) {
-		writeData(rd,result);
+		RF.writeData(rd,result);
 	}
 }
 
