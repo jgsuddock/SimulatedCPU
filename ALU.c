@@ -7,15 +7,7 @@
 
 #include "ALU.h"
 
-struct ALU {
-    bool ALU_Zero;
-};
-
-ALU_T ALU_new(void) {
-  ALU_T A = malloc(sizeof(ALU));
-  A->ALU_Zero = false;
-  return A;
-}
+static bool ALU_Zero = false;
 
 // Method for ALU operations.
 // The input includes funct to determine the ALU action, value of SData,
@@ -23,7 +15,7 @@ ALU_T ALU_new(void) {
 // after the selected operation was done.
 uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData) {
   
-  A->ALU_Zero = false; // Reset the state of ALU_Zero.
+  ALU_Zero = false; // Reset the state of ALU_Zero.
   uint32_t result; // Variable to hold the result of the operation.
   
   // Switch statement to determine which action to take based on the value
@@ -41,7 +33,7 @@ uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData) {
   case 6: // Subtraction
     result = SData - TData;
     if(result == 0) {
-      A->ALU_Zero = true; // Update ALU_Zero.
+      ALU_Zero = true; // Update ALU_Zero.
     }
     break;
   default :
@@ -53,5 +45,5 @@ uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData) {
 
 // Method to get the current value of ALU_Zero.
 bool getZero() {
-  return A->ALU_Zero;
+  return ALU_Zero;
 }
