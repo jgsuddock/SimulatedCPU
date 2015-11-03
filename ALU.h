@@ -9,7 +9,7 @@
 #include "ALU.c"
 
 public:
-    void ALU(int funct, uint32_t *SData, uint32_t *TData, uint32_t *DData);
+    uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData);
     bool getZero();
     
 private:
