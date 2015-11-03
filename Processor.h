@@ -10,7 +10,7 @@
 #include "ALU.h"
 #include "Control.h"
 
-struct Processor {
+typedef struct Processor {
         uint32_t PC;
         // RegDst
         // Jump
@@ -22,11 +22,11 @@ struct Processor {
         // ALUSrc
         // RegWrite
         uint32_t conArr[9];
-        struct RegFile *RF;
-        struct ALU *A;
-};
+        struct RegFile_T *RF;
+        struct ALU_T *A;
+} *Processor_T;
 
-extern Processor Processor_new();
+extern Processor_T Processor_new();
 extern void execProcessor(uint32_t instr);
 extern void executeRType(uint32_t instr);
 extern void executeIType(uint32_t instr);
