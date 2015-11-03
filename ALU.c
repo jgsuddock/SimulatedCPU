@@ -5,7 +5,7 @@
 
 #include "ALU.h"
 
-ALU_T ALU_new() {
+ALU_T ALU_new(void) {
   ALU_T A = malloc(sizeof(ALU));
   A->ALU_Zero = false;
   return A;
