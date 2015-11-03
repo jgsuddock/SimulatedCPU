@@ -11,7 +11,7 @@ Struct ALU {
 };
 
 extern ALU ALU_new();
-extern uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData);
+extern uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData);
 extern bool getZero();
 
 #endif
