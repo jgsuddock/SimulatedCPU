@@ -61,7 +61,7 @@ void executeRType(uint32_t instr) {
 	uint32_t data1 = readData(rs);
 	uint32_t data2 = readData(rt);
 	
-	ControlInfo(conArr,funct);
+	ControlInfo(P->conArr,funct);
 	uint32_t result = ALU(P->conArr[5],data1,data2);
 	if(P->conArr[8] == 1) {
 		writeData(rd,result);
