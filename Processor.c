@@ -22,7 +22,7 @@ Processor_T Processor_new() {
 }
 
 void execProcessor(uint32_t instr) {
-	P->PC = P->PC + 1;
+	P->PC++;
 	uint32_t type = instr >> 26;
 	switch(type) {
   	case 0: // R type
