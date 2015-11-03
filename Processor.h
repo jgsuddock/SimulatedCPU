@@ -31,6 +31,9 @@ class Processor {
         // ALUSrc
         // RegWrite
         uint32_t conArr[9];
+        RegFile RF;
+        ALU A;
+        Control C;
 };
 
 #endif
