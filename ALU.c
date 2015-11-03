@@ -5,7 +5,7 @@
 
 #include "ALU.h"
 
-ALU() {
+ALU()_new {
   ALU_Zero = false;
 }
 
