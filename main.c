@@ -31,7 +31,7 @@ uint32_t hexToDec (char* hex);
 int main(int argc, char const *argv[])
 {
 
-	Processor proc = new Processor();
+	Processor_T proc = Processor_new();
 
 	FILE * iFile;
 	int rv;
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[])
 		fclose(iFile);
 	}
 
-	proc.execProcessor(instructions[0]);
+	execProcessor(instructions[0]);
 
 	return 0;
 }
