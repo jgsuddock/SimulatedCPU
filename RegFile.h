@@ -2,6 +2,7 @@
 #ifndef __REGFILE_H
 #define __REGFILE_H
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
