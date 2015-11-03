@@ -25,7 +25,7 @@ struct Processor {
 }; 
 
 Processor_T Processor_new(void) {
-	Processor_T P = malloc(sizeof(Processor));
+	Processor_T P = malloc(sizeof(struct Processor));
   	P->PC = 0;
   
   	int i;

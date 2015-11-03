@@ -38,21 +38,28 @@ int main(int argc, char const *argv[])
 	RegFile_T RF;
 	RF = RegFile_new();
 
+	//
+	//Read File
+	//
 	FILE * iFile;
 	int rv;
 	int i = 0;
 
 	iFile = fopen("Instructions.txt", "r");
 
+	//Holds hex int for each line read
 	uint32_t hex = 0;
+	//Instruction Memory
 	uint32_t instructions [1000];
 
-	if (iFile == NULL) 
+	//
+	if (iFile == NULL)
 		perror ("Error opening file");
 	else {
-
+		//Reads First Line as Hex Format.
 		rv = fscanf(iFile, "%x", &hex);
 
+		//Once it its the end of the file, it will stop pulling each line.
 		while (rv != EOF) {
 
 			printf("%d\n",hex);
