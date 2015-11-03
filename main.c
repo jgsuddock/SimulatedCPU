@@ -34,6 +34,9 @@ int main(int argc, char const *argv[])
 
 	Processor_T proc;
 	proc = Processor_new();
+	
+	RegFile_T RF;
+	RF = RegFile_new();
 
 	FILE * iFile;
 	int rv;
@@ -64,7 +67,7 @@ int main(int argc, char const *argv[])
 		fclose(iFile);
 	}
 
-	execProcessor(instructions[0]);
+	execProcessor(proc,RF,instructions[0]);
 
 	return 0;
 }
