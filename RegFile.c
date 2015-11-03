@@ -11,7 +11,7 @@ struct RegFile {
 }; 
 
 RegFile_T RegFile_new(void) {
-	RegFile_T RF = malloc(sizeof(RegFile));
+	RegFile_T RF = malloc(sizeof(struct RegFile));
 	
 	int i;
 	for(i = 0; i < 32; i++) {
