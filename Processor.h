@@ -10,16 +10,7 @@
 #include "ALU.h"
 #include "Control.h"
 
-class Processor {
-    public:
-        Processor();
-        void execProcessor(uint32_t instr);
-        void executeRType(uint32_t instr);
-        void executeIType(uint32_t instr);
-        void executeJType(uint32_t instr);
-        uint32_t getPC();
-        
-    private:
+struct Processor {
         uint32_t PC;
         // RegDst
         // Jump
@@ -34,5 +25,12 @@ class Processor {
         RegFile RF;
         ALU A;
 };
+
+extern Processor();
+extern void execProcessor(uint32_t instr);
+extern void executeRType(uint32_t instr);
+extern void executeIType(uint32_t instr);
+extern void executeJType(uint32_t instr);
+extern uint32_t getPC();
 
 #endif
