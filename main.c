@@ -14,6 +14,7 @@ Last Updated: October 21, 2015 @ 14:00
 
 */
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
