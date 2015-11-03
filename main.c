@@ -38,6 +38,8 @@ int main(int argc, char const *argv[])
 	RegFile_T RF;
 	RF = RegFile_new();
 
+	printReg(RF);
+
 	//
 	//Read File
 	//
@@ -76,6 +78,8 @@ int main(int argc, char const *argv[])
 	}
 
 	execProcessor(proc,RF,instructions[0]);
+
+	printReg(RF);
 
 	return 0;
 }

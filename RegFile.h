@@ -16,5 +16,6 @@ typedef struct RegFile *RegFile_T;
 extern RegFile_T RegFile_new(void);
 extern uint32_t readData(RegFile_T RF, uint32_t addr);
 extern void writeData(RegFile_T RF, uint32_t addr, uint32_t data);
+extern void printReg(RegFile_T RF);
 
 #endif

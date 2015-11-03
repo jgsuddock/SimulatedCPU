@@ -15,7 +15,7 @@ RegFile_T RegFile_new(void) {
 	
 	int i;
 	for(i = 0; i < 32; i++) {
-		RF->RegMem[i] = 0;
+		RF->RegMem[i] = i;
 	}
 	
 	return RF;
@@ -35,4 +35,13 @@ void writeData(RegFile_T RF, uint32_t addr, uint32_t data) {
 	} else {
 		RF->RegMem[addr] = data;
 	}
+}
+
+void printReg(RegFile_T RF) {
+	printf("Reg File\n");
+	int i;
+	for(i = 0; i < 32; i++) {
+		printf("%d\n",RF->RegMem[i]);
+	}
+	printf("END\n\n");
 }
