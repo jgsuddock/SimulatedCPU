@@ -15,27 +15,27 @@ ALU ALU_new() {
 // The input includes funct to determine the ALU action, value of SData,
 // value of TData, and value of DData. The value of DData will be updated
 // after the selected operation was done.
-uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData) {
+uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData) {
   
-  ALU_Zero = false; // Reset the state of ALU_Zero.
+  A->ALU_Zero = false; // Reset the state of ALU_Zero.
   uint32_t result; // Variable to hold the result of the operation.
   
   // Switch statement to determine which action to take based on the value
   // of funct.
   switch(ALUop) {
   case 0: // Bitwise AND
-    result = *SData & *TData;
+    result = SData & TData;
     break;
   case 1: // Bitwise OR
-    result = *SData | *TData;
+    result = SData | TData;
     break;
   case 2: // Addition
-    result = *SData + *TData;
+    result = SData + TData;
     break;
   case 6: // Subtraction
-    result = *SData - *TData;
+    result = SData - TData;
     if(result == 0) {
-      ALU_Zero = true; // Update ALU_Zero.
+      A->ALU_Zero = true; // Update ALU_Zero.
     }
     break;
   default :
@@ -47,5 +47,5 @@ uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData) {
 
 // Method to get the current value of ALU_Zero.
 bool getZero() {
-  return ALU_Zero;
+  return A->ALU_Zero;
 }
