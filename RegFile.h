@@ -12,9 +12,11 @@
 #define uint32_t RegMemSize 32;
 
 public:
-	void RegFile_RW(char* Rs, char* Rt, char* Rd, WrtData, WrtEnb, &SData, &TData);
+	RegFile();
+	uint32_t rweadData(uint32_t addr);
+	void writeData(uint32_t addr, uint32_t data);
 
 private:
-	uint32_t binToDecimal (char *bin);
+	uint32_t RegFileArr[RegMemSize];
 
 #endif
