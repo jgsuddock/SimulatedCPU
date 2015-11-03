@@ -5,7 +5,7 @@
 
 #include "ALU.h"
 
-ALU::ALU() {
+ALU() {
   ALU_Zero = false;
 }
 
@@ -13,7 +13,7 @@ ALU::ALU() {
 // The input includes funct to determine the ALU action, value of SData,
 // value of TData, and value of DData. The value of DData will be updated
 // after the selected operation was done.
-uint32_t ALU::ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData) {
+uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData) {
   
   ALU_Zero = false; // Reset the state of ALU_Zero.
   uint32_t result; // Variable to hold the result of the operation.
@@ -44,6 +44,6 @@ uint32_t ALU::ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData) {
 }
 
 // Method to get the current value of ALU_Zero.
-bool ALU::getZero() {
+bool getZero() {
   return ALU_Zero;
 }
