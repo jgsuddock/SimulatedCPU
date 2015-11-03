@@ -26,7 +26,7 @@ typedef struct Processor {
         struct ALU_T *A;
 } *Processor_T;
 
-extern Processor_T Processor_new();
+extern Processor_T Processor_new(void);
 extern void execProcessor(uint32_t instr);
 extern void executeRType(uint32_t instr);
 extern void executeIType(uint32_t instr);
