@@ -33,7 +33,6 @@ class Processor {
         uint32_t conArr[9];
         RegFile RF;
         ALU A;
-        Control C;
 };
 
 #endif
