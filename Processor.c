@@ -22,15 +22,12 @@ struct Processor {
         // ALUSrc
         // RegWrite
         uint32_t conArr[9];
-        struct RegFile_T *RF;
-        struct ALU_T *A;
 }; 
 
 Processor_T Processor_new(void) {
 	Processor_T P = malloc(sizeof(Processor));
   	P->PC = 0;
-  	P->RF = RegFile_new();
-  	P->A = ALU_new();
+  
   	int i;
 	for(i = 0; i < 9; i++) {
 		P->conArr[i] = 0;
@@ -38,7 +35,7 @@ Processor_T Processor_new(void) {
 	return P;
 }
 
-void execProcessor(uint32_t instr) {
+void execProcessor(Processor_T P, uint32_t instr) {
 	P->PC++;
 	uint32_t type = instr >> 26;
 	switch(type) {
@@ -51,7 +48,7 @@ void execProcessor(uint32_t instr) {
 	}
 }
 
-void executeRType(uint32_t instr) {
+void executeRType(Processor_T P, uint32_t instr) {
 	uint32_t rs = (instr << 6) >> 27;
 	uint32_t rt = (instr << 11) >> 27;
 	uint32_t rd = (instr << 16) >> 27;
@@ -68,15 +65,15 @@ void executeRType(uint32_t instr) {
 	}
 }
 
-void executeIType(uint32_t instr) {
+void executeIType(Processor_T P, uint32_t instr) {
 	
 }
 
-void executeJType(uint32_t instr) {
+void executeJType(Processor_T P, uint32_t instr) {
 	
 
 }
 
-uint32_t getPC() {
+uint32_t getPC(Processor_T P) {
 	return P->PC;
 }
