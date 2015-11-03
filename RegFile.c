@@ -21,7 +21,7 @@ RegFile_T RegFile_new(void) {
 	return RF;
 }
 
-uint32_t readData(uint32_t addr) {
+uint32_t readData(RegFile_T RF, uint32_t addr) {
 	if(addr > 32){
 		std::cout << "Error: Read addressing out of bounds!";
 	} else {
@@ -29,7 +29,7 @@ uint32_t readData(uint32_t addr) {
 	}
 }
 
-void writeData(uint32_t addr, uint32_t data) {
+void writeData(RegFile_T RF, uint32_t addr, uint32_t data) {
 	if(addr > 32){
 		std::cout << "Error: Read addressing out of bounds!";
 	} else {
