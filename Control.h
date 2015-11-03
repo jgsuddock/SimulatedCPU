@@ -6,7 +6,6 @@
 #include <stdint.h>
 #include <stdarg.h>
 
-public:
-    void ControlInfo(uint32_t contArr[], uint32_t funct);
+void ControlInfo(uint32_t contArr[], uint32_t funct);
 
 #endif
