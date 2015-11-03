@@ -5,8 +5,10 @@
 
 #include "ALU.h"
 
-ALU()_new {
-  ALU_Zero = false;
+ALU ALU_new() {
+  ALU A = malloc(sizeof(ALU));
+  A->ALU_Zero = false;
+  return A;
 }
 
 // Method for ALU operations.
