@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <stdarg.h>
     
-Struct ALU {
+struct ALU {
     bool ALU_Zero;
 };
 
