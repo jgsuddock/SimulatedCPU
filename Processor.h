@@ -1,5 +1,5 @@
-#ifndef PROCESSOR_H
-#define PROCESSOR_H
+#ifndef __PROCESSOR_H
+#define __PROCESSOR_H
 
 #include <stdlib.h>
 #include <stdio.h>
