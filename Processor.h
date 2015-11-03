@@ -14,10 +14,10 @@
 typedef struct Processor *Processor_T;
 
 extern Processor_T Processor_new(void);
-extern void execProcessor(uint32_t instr);
-extern void executeRType(uint32_t instr);
-extern void executeIType(uint32_t instr);
-extern void executeJType(uint32_t instr);
-extern uint32_t getPC();
+extern void execProcessor(Processor_T P, uint32_t instr);
+extern void executeRType(Processor_T P, uint32_t instr);
+extern void executeIType(Processor_T P, uint32_t instr);
+extern void executeJType(Processor_T P, uint32_t instr);
+extern uint32_t getPC(Processor_T P);
 
 #endif
