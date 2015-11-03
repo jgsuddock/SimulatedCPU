@@ -6,6 +6,10 @@
 
 #include "RegFile.h"
 
+struct RegFile {
+	uint32_t RegFileArr[32];
+}; 
+
 RegFile_T RegFile_new(void) {
 	RegFile_T RF = malloc(sizeof(RegFile));
 	
