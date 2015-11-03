@@ -9,7 +9,7 @@
 #include "ALU.h"
 #include "Control.h"
 
-Processor::Processor() {
+Processor() {
   PC = 0;
   int i;
 	for(i = 0; i < 9; i++) {
@@ -17,7 +17,7 @@ Processor::Processor() {
 	}
 }
 
-void Processor::execProcessor(uint32_t instr) {
+void execProcessor(uint32_t instr) {
 	PC = PC + 1;
 	uint32_t type = instr >> 26;
 	switch(type) {
@@ -30,7 +30,7 @@ void Processor::execProcessor(uint32_t instr) {
 	}
 }
 
-void Processor::executeRType(uint32_t instr) {
+void executeRType(uint32_t instr) {
 	uint32_t rs = (instr << 6) >> 27;
 	uint32_t rt = (instr << 11) >> 27;
 	uint32_t rd = (instr << 16) >> 27;
@@ -47,15 +47,15 @@ void Processor::executeRType(uint32_t instr) {
 	}
 }
 
-void Processor::executeIType(uint32_t instr) {
+void executeIType(uint32_t instr) {
 	
 }
 
-void Processor::executeJType(uint32_t instr) {
+void executeJType(uint32_t instr) {
 	
 
 }
 
-uint32_t Processor::getPC() {
+uint32_t getPC() {
 	return PC;
 }
