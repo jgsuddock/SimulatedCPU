@@ -2,9 +2,9 @@
 #ifndef REGFILE_H
 #define REGFILE_H
 
-#include "stdbool.h"
-#include "stdint.h"
-#include "stdarg.h"
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdarg.h>
 
 #include "RegFile.c"
 
