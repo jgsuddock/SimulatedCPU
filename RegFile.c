@@ -6,7 +6,7 @@
 
 #include "RegFile.h"
 
-RegFile() {
+RegFile_new() {
 	int i;
 	for(i = 0; i < RegMemSize; i++) {
 		RegMemSize[i] = 0;
