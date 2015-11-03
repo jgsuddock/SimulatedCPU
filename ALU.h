@@ -5,15 +5,13 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdarg.h>
-
-class ALU {
-public:
-    ALU();
-    uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData);
-    bool getZero();
     
-private:
+Struct ALU {
     bool ALU_Zero;
 };
+
+extern ALU();
+extern uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData);
+extern bool getZero();
 
 #endif
