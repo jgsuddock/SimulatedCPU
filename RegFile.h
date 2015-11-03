@@ -14,7 +14,7 @@ struct RegFile {
 	uint32_t RegFileArr[RegMemSize];
 };
 
-extern RegFile_new();
+extern RegFile RegFile_new();
 extern uint32_t readData(uint32_t addr);
 extern void writeData(uint32_t addr, uint32_t data);
 
