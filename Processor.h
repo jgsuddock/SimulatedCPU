@@ -16,6 +16,7 @@ public:
     void executeRType(uint32_t instr);
     void executeIType(uint32_t instr);
     void executeJType(uint32_t instr);
+    uint32_t getPC();
     
 private:
     uint32_t PC;
