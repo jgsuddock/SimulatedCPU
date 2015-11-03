@@ -32,7 +32,8 @@ uint32_t hexToDec (char* hex);
 int main(int argc, char const *argv[])
 {
 
-	Processor_T proc = Processor_new();
+	Processor_T proc;
+	proc = Processor_new();
 
 	FILE * iFile;
 	int rv;
