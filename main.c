@@ -66,6 +66,7 @@ int main(int argc, char const *argv[])
 
 			instructions[i] = hex;
 
+			//Reads every line after the first line (Will return EOF at file end)
 			rv = fscanf(iFile, "%x", &hex);
 
 			i++;
