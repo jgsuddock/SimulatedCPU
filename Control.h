@@ -7,8 +7,8 @@
  * Description: This project simulates the components of a MIPS
  * 				CPU and how they interact.
  * 
- * Created by: Jake Suddock
- * 			Jeanette Rusli
+ * Created by:  Jake Suddock
+ * 			        Jeanette Rusli
  * 
  * Last Updated: November 3, 2015 @ 2:00
  * 
