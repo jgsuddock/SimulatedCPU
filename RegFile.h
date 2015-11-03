@@ -8,10 +8,10 @@
 #include <stdarg.h>
 
 //Defines the Register Size
-#define uint32_t RegMemSize 32;
+//#define uint32_t RegMemSize 32;
 	
 struct RegFile {
-	uint32_t RegFileArr[RegMemSize];
+	uint32_t RegFileArr[32];
 };
 
 extern RegFile RegFile_new();
