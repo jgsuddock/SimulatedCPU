@@ -26,11 +26,16 @@
 //Defines the Register Size
 //#define uint32_t RegMemSize 32;
 
+// Structure that holds the register array
 typedef struct RegFile *RegFile_T;
 
+// Register File Initialization
 extern RegFile_T RegFile_new(void);
+// Reads Data from Register Array at Address
 extern uint32_t readData(RegFile_T RF, uint32_t addr);
+// Writes Data to Register Array at Address
 extern void writeData(RegFile_T RF, uint32_t addr, uint32_t data);
+// Prints Register Array (Used For DEBUGGING)
 extern void printReg(RegFile_T RF);
 
 #endif
