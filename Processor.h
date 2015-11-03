@@ -22,11 +22,11 @@ struct Processor {
         // ALUSrc
         // RegWrite
         uint32_t conArr[9];
-        RegFile RF;
-        ALU A;
+        struct RegFile *RF;
+        struct ALU *A;
 };
 
-extern Processor();
+extern Processor_new();
 extern void execProcessor(uint32_t instr);
 extern void executeRType(uint32_t instr);
 extern void executeIType(uint32_t instr);
