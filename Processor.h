@@ -19,6 +19,15 @@ public:
     
 private:
     uint32_t PC;
+    // RegDst
+    // Jump
+    // Branch
+    // MemRead
+    // MemToReg
+    // ALUop
+    // MemWrite
+    // ALUSrc
+    // RegWrite
     uint32_t conArr[9];
 
 #endif
