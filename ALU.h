@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <stdarg.h>
 
+class ALU {
 public:
     ALU();
     uint32_t ALU(uint32_t ALUop, uint32_t *SData, uint32_t *TData);
@@ -13,5 +14,6 @@ public:
     
 private:
     bool ALU_Zero;
+};
 
 #endif
