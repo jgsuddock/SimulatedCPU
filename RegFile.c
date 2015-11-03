@@ -7,10 +7,14 @@
 #include "RegFile.h"
 
 RegFile_new() {
+	RegFile RF = malloc(sizeof(RegFile));
+	
 	int i;
 	for(i = 0; i < RegMemSize; i++) {
-		RegMemSize[i] = 0;
+		RF->RegMemSize[i] = 0;
 	}
+	
+	return RF;
 }
 
 uint32_t readData(uint32_t addr) {
