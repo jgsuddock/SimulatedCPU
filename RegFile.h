@@ -1,6 +1,6 @@
 
-#ifndef REGFILE_H
-#define REGFILE_H
+#ifndef __REGFILE_H
+#define __REGFILE_H
 
 #include <stdbool.h>
 #include <stdint.h>
