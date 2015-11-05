@@ -23,6 +23,10 @@
 #include <stdint.h>
 #include <stdarg.h>
     
+// Method for ALU operations.
+// The input includes ALUop to determine the ALU action, value of SData, and
+// value of TData. 
+// The result of the ALU operation will then be returned.
 uint32_t ALU(uint32_t ALUop, uint32_t SData, uint32_t TData);
 bool getZero();
 
