@@ -29,11 +29,22 @@
 
 typedef struct Processor *Processor_T;
 
+// Method to create new processor and initialize its members.
+// It will then return the newly created processor.
+// The result of the ALU operation will then be returned.
 extern Processor_T Processor_new(void);
+
+// Method to execute the given instruction.
+// The input includes the currently used processor, register file, and instruction.
 extern void execProcessor(Processor_T P, RegFile_T RF, uint32_t instr);
+
+// Method to execute R-type instructions.
+// The input includes currently used processor, register file, and instruction.
 extern void executeRType(Processor_T P, RegFile_T RF, uint32_t instr);
 extern void executeIType(Processor_T P, RegFile_T RF, uint32_t instr);
 extern void executeJType(Processor_T P, RegFile_T RF, uint32_t instr);
+
+// Method to get the current value of PC.
 extern uint32_t getPC(Processor_T P);
 
 #endif
