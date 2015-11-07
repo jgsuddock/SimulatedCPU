@@ -26,6 +26,7 @@
 #include "RegFile.h"
 #include "ALU.h"
 #include "Control.h"
+#include "MainMemory.h"
 
 typedef struct Processor *Processor_T;
 
@@ -36,7 +37,7 @@ extern Processor_T Processor_new(void);
 
 // Method to execute the given instruction.
 // The input includes the currently used processor, register file, and instruction.
-extern void execProcessor(Processor_T P, RegFile_T RF, uint32_t instr);
+extern void execProcessor(Processor_T P, RegFile_T RF, MainMem_T M, uint32_t instr);
 
 // Method to execute R-type instructions.
 // The input includes currently used processor, register file, and instruction.
