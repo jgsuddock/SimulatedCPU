@@ -56,7 +56,7 @@ Processor_T Processor_new(void) {
 
 // Method to execute the given instruction.
 // The input includes the currently used processor, register file, and instruction.
-void execProcessor(Processor_T P, RegFile_T RF, uint32_t instr) {
+void execProcessor(Processor_T P, RegFile_T RF, MainMem_T M, uint32_t instr) {
 	P->PC++; // Increment the PC every time it executes an instruction.
 	uint32_t type = instr >> 26; // Get the op-code to know the type of instruction.
 	
@@ -67,7 +67,7 @@ void execProcessor(Processor_T P, RegFile_T RF, uint32_t instr) {
     		executeRType(P, RF, instr); // Execute the instruction based on the type.
     		break;
   	default :
-		executeIType(P, RF, instr, type);
+		executeIType(P, RF, M, instr, type);
 	    	break;
 	}
 }
