@@ -4,6 +4,16 @@ EECS 643 Project
 ##To Do:
 
 ###ReadFile
+	* Loop Through Multiple Instructions
+
+###Memory
+	* Initialize Memory
+	* Read to Memory Function
+	* Write from Memory Function
+
+##Done:
+
+###ReadFile
 
 	* Read in Hex Line by Line
 	* Parse HexToBin
