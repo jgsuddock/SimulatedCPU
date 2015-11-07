@@ -53,6 +53,17 @@ void ControlInfo(uint32_t contArr[], uint32_t funct) {
     contArr[7] = 0; // ALUSrc
     contArr[8] = 1; // RegWrite
     break;
+  case 35: // load
+    contArr[0] = 0; // RegDst
+    contArr[1] = -1; // Jump
+    contArr[2] = -1; // Branch
+    contArr[3] = 1; // MemRead
+    contArr[4] = 1; // MemToReg
+    contArr[5] = 2; // ALUop
+    contArr[6] = 0; // MemWrite
+    contArr[7] = 1; // ALUSrc
+    contArr[8] = 1; // RegWrite
+    break;
   case 36: // and
     contArr[0] = 1; // RegDst
     contArr[1] = -1; // Jump
@@ -74,6 +85,17 @@ void ControlInfo(uint32_t contArr[], uint32_t funct) {
     contArr[6] = 0; // MemWrite
     contArr[7] = 0; // ALUSrc
     contArr[8] = 1; // RegWrite
+    break;
+  case 43: // store
+    contArr[0] = -1; // RegDst
+    contArr[1] = -1; // Jump
+    contArr[2] = -1; // Branch
+    contArr[3] = 0; // MemRead
+    contArr[4] = -1; // MemToReg
+    contArr[5] = 2; // ALUop
+    contArr[6] = 1; // MemWrite
+    contArr[7] = 1; // ALUSrc
+    contArr[8] = 0; // RegWrite
     break;
   default :
     printf("Invalid function.\n" );
