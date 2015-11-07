@@ -22,6 +22,7 @@
 
 #include "Processor.h"
 #include "RegFile.h"
+#include "MainMemory.h"
 
 int main(int argc, char const *argv[])
 {
@@ -32,6 +33,9 @@ int main(int argc, char const *argv[])
 	//Initialize Register File
 	RegFile_T RF;
 	RF = RegFile_new();
+
+	MainMem_T mem;
+	mem = MainMem_new();
 
 	//Prints the Register
 	printf("Initial Register File:\n");
@@ -84,7 +88,7 @@ int main(int argc, char const *argv[])
 		index = getPC(proc); // Returns the program counter index.
 		
 		if(index >= 0 && index <= lastIndex) { // Valid address. Sends instruction to instruction processor.
-			execProcessor(proc,RF,instructions[index]);
+			execProcessor(proc, RF, mem, instructions[index]);
 		}
 		else if(index < 0) { // ERROR! Index outside of array bounds. This will terminate the program
 			printf("Cannot reference array address %d in instruction memory.\nMax index is %d",index,lastIndex);
