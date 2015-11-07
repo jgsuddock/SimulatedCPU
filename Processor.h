@@ -41,7 +41,7 @@ extern void execProcessor(Processor_T P, RegFile_T RF, uint32_t instr);
 // Method to execute R-type instructions.
 // The input includes currently used processor, register file, and instruction.
 extern void executeRType(Processor_T P, RegFile_T RF, uint32_t instr);
-extern void executeIType(Processor_T P, RegFile_T RF, uint32_t instr, uint32_t op);
+extern void executeIType(Processor_T P, RegFile_T RF, MainMem_T M, uint32_t instr, uint32_t op);
 extern void executeJType(Processor_T P, RegFile_T RF, uint32_t instr);
 
 // Method to get the current value of PC.
