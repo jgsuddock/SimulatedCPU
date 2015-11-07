@@ -11,7 +11,7 @@ EECS 643 Project
 	* Read to Memory Function
 	* Write from Memory Function
 
-##Instruction:
+##Instructions:
 	* 01095020 => add $t2, $t0, $t1
 	* 01285822 => sub $t3, $t1, $t0
 	* ac080001 => sw  $t0, 1(0)
