@@ -10,7 +10,7 @@
  * Created by: Jake Suddock
  * 			Jeanette Rusli
  * 
- * Last Updated: November 3, 2015 @ 2:00
+ * Last Updated: November 7, 2015 @ 14:45
  * 
  */
 
@@ -46,14 +46,15 @@ int main(int argc, char const *argv[])
 
 	iFile = fopen("Instructions.txt", "r");
 
-	//Holds hex int for each line read
+	// Holds hex int for each line read
 	uint32_t hex = 0;
-	//Instruction Memory
+	// Instruction Memory
 	uint32_t instructions [1000];
 
-	//
-	if (iFile == NULL)
+	// Read File Check
+	if (iFile == NULL) {
 		perror ("Error opening file");
+	}
 	else {
 		//Reads First Line as Hex Format (Will return value EOF at file end)
 		rv = fscanf(iFile, "%x", &hex);
@@ -73,11 +74,28 @@ int main(int argc, char const *argv[])
 		//Closes Instruction File
 		fclose(iFile);
 	}
+	
+	int lastIndex = i - 1;
+	uint32_t index = 0;
+	bool loop = true;
 
-	//Decode and Process First Instruction. This function will call other functions based on instruction needs.
-	execProcessor(proc,RF,instructions[0]);
+	// Decode and Process First Instruction. This function will call other functions based on instruction needs.
+	while (loop == true) {
+		index = getPC(proc); // Returns the program counter index.
+		
+		if(index >= 0 && index <= lastIndex) { // Valid address. Sends instruction to instruction processor.
+			execProcessor(proc,RF,instructions[index]);
+		}
+		else if(index < 0) { // ERROR! Index outside of array bounds. This will terminate the program
+			printf("Cannot reference array address %d in instruction memory.\nMax index is %d",index,lastIndex);
+			loop = false;
+		}
+		else { // Reached the end of the instruction array. This will terminate the program
+			loop = false;
+		}
+	}
 
-	//Prints the Register
+	// Prints the Register
 	printf("Register File After First Instruction:\n");
 	printReg(RF);
 
