@@ -62,7 +62,7 @@ uint32_t readData(RegFile_T RF, uint32_t addr) {
 void writeData(RegFile_T RF, uint32_t addr, uint32_t data) {
 	// Checks validity of input address
 	if(addr > 32){
-		printf("Error: Read addressing out of bounds!\n" );
+		printf("Error: Write addressing out of bounds!\n" );
 	} else {
 		//Writes data to address of register file
 		RF->RegMem[addr] = data;
