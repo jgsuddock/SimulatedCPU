@@ -26,6 +26,7 @@
 #include "RegFile.h"
 #include "ALU.h"
 #include "Control.h"
+#include "MainMemory.h"
 
 typedef struct Processor *Processor_T;
 
