@@ -132,7 +132,7 @@ void executeIType(Processor_T P, RegFile_T RF, MainMem_T M, uint32_t instr, uint
 
 	if(P->conArr[4] == 0) { // MemToReg
 		WrtData = result;
-	} else {
+	} else if(P->conArr[4] == 1) {
 		WrtData = RdData;
 	}
 	
