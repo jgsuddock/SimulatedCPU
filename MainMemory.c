@@ -24,6 +24,8 @@
 
 #define MainMemSize 1024
 
+// Define the structure of Main Memory.
+// The members include the address and data.
 struct MainMem {
 	uint32_t MainMemArr[MainMemSize];
 }; 
