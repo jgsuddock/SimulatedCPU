@@ -24,6 +24,7 @@
 #include "RegFile.h"
 #include "ALU.h"
 #include "Control.h"
+#include "MainMemory.h"
 
 // Define the structure of Processor.
 // Processor will hold the Program Counter (PC) and
